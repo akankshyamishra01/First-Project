@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile</title>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    }
+
+    section {
+        background: white;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 15px;
+        width: 80%;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+    }
+
+    section:hover {
+        transform: scale(1.02);
+    }
+
+    header {
+        text-align: center;
+        padding: 30px;
+        color: white;
+        background: linear-gradient(to right, #f8eafb, #ee0979);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 40px;
+    }
+
+    h2 {
+        margin-top: 10px;
+    }
+
+    h3 {
+        color: #ee0979;
+    }
+
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        background: #ee0979;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff6a00;
+        transform: scale(1.1);
+    }
+
+
+    ul li {
+        padding: 5px;
+        transition: 0.3s;
+    }
+
+    ul li:hover {
+        color: #ff6a00;
+        transform: translateX(10px);
+    }
+
+    ol {
+        padding-left: 20px;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        width: 150px;
+        border: 4px solid #ee0979;
+        box-shadow: 0 4px 10px gray;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th {
+        background: #ee0979;
+        color: white;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background: #fbc2eb;
+    }
+
+
+    a {
+        text-decoration: none;
+        color: #ee0979;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #ff6a00;
+    }
+
+
+    input, textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .dark {
+        background: #121212;
+        color: white;
+    }
+
+    .dark section {
+        background: #1e1e1e;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Student Profile</h1>
+    <h2 id="studentName">Akankshya Mishra</h2>
+    <button onclick="showGreeting()">Welcome</button>
+    <button onclick="toggleMode()">🌙 Toggle Mode</button>
+</header>
+
+<section>
+    <h3>About Me</h3>
+    <p>
+        My name is Akankshya Mishra. I am a science student.
+        I enjoy coding, reading books, and listening to music.
+    </p>
+</section>
+
+<section>
+    <h3>Subjects</h3>
+    <ul>
+        <li>Mathematics</li>
+        <li>Physics</li>
+        <li>Chemistry</li>
+        <li>Computer Science</li>
+        <li>English</li>
+    </ul>
+</section>
+
+<section>
+    <h3>My Goals</h3>
+    <ol>
+        <li>Become a Software Developer</li>
+        <li>Master Programming Skills</li>
+        <li>Build Innovative Projects</li>
+    </ol>
+</section>
+
+<section>
+    <h3>Profile Image</h3>
+    <img src="pht.jpeg" alt="Profile Image">
+</section>
+
+<section>
+    <h3>Marks</h3>
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Data structure using c</td>
+            <td>56</td>
+        </tr>
+        <tr>
+            <td>Odia</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>Evs</td>
+            <td>70</td>
+        </tr>
+         <tr>
+            <td>English</td>
+            <td>70</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h3>Favorite Website</h3>
+    <a href="https://www.google.com" target="_blank">Visit Google</a>
+</section>
+
+<section>
+    <h3>Contact Me</h3>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Enter Name"><br>
+        <input type="text" id="class" placeholder="Enter Class"><br>
+        <textarea id="message" placeholder="Enter Message"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<script>
+function showGreeting() {
+    let name = document.getElementById("studentName").innerText;
+    alert("Welcome, " + name + "!");
+}
+
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    let name = document.getElementById("name").value;
+    let studentClass = document.getElementById("class").value;
+    let message = document.getElementById("message").value;
+
+    if (name === "" || studentClass === "" || message === "") {
+        alert("Please fill all fields!");
+        event.preventDefault();
+    } else {
+        alert("Form submitted successfully!");
+    }
+});
+</script>
+
+</body>
+</html>
